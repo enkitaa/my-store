@@ -1,1 +1,15 @@
-<p>product-item works!</p>
+<div class="product-container">
+    <a>
+      <img class="product-image" alt="{{product.name}}" src="{{product.url}}">
+    </a>
+    <div class='prod-name'>{{product.name}}</div>
+    <div class='price'>$ {{product.price}}</div>
+    <form (ngSubmit)="addToCart()" #form="ngForm">
+        <select name='selectQty' [(ngModel)]="quantity">
+            <option *ngFor="let quantity of quantities">{{quantity}}</option>
+        </select>
+      <br><br>
+      <button type="submit" [disabled]="!quantity" class="add-btn">Add to Cart</button>
+    </form>
+  </div>
+  
