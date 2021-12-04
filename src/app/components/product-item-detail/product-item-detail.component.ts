@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from './../../models/product';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -12,7 +13,7 @@ export class ProductItemDetailComponent implements OnInit {
   itemId: number = 0
   product: Product;
 
-  constructor(private route:ActivatedRoute, private productService: ProductService) {
+  constructor(private route:ActivatedRoute, private productService: ProductService, private cartService: CartService) {
     this.product = {
       id: 0, name:  '', price: 0, url: '', description: ''
     };
@@ -27,7 +28,6 @@ export class ProductItemDetailComponent implements OnInit {
 
     this.productService.getProducts().subscribe((res: Product[]) => {
       this.product = res.filter(({id}) => id === this.itemId)[0];
-      console.log(this.product)
     });
     
   }
