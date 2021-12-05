@@ -1,1 +1,9 @@
-<p>confirmation works!</p>
+<div class="confirmation-container" *ngIf="fullName!==''">
+    <div class="confirmation-items ">
+      <h1>Success! 🎉</h1>
+      <p>Thank you, {{ fullName }}!!</p>
+      <p>Your ${{ totalPrice }} order is confirmed!</p>
+      <p>Please allow 2-3 business days for shipping.</p>
+      <a routerLink="" class="back-link">&#8592; Back to Product List</a>
+    </div>
+  </div>

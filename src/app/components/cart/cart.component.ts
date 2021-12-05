@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartItem, Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   totalPrice: number = 0;
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getProduct();
@@ -23,8 +24,7 @@ export class CartComponent implements OnInit {
     this.totalPrice = this.cartService.getTotal();
   }
 
-  confirmOrder(e: any){
-    console.log(e);
-    //ToDo - Confirm page redirect
+  confirmOrder(customerData: any){
+    this.router.navigateByUrl(`confirmation/${customerData.fullName}/${this.totalPrice}`);
   }
 }
