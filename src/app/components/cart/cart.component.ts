@@ -9,14 +9,17 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
+  totalPrice: number = 0;
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getProduct();
+    this.totalPrice = this.cartService.getTotal();
   }
 
   removeFromCart(itemId:any){
     this.cartService.removeItem(itemId);
     this.cartItems = this.cartService.getProduct();
+    this.totalPrice = this.cartService.getTotal();
   }
 }

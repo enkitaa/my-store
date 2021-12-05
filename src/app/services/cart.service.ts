@@ -22,4 +22,12 @@ export class CartService {
     this.cartItems = this.cartItems.filter(({id}) => id!== productId);
     alert("Item removed from cart!");
   }
+
+  getTotal(){
+    let totalPrice = 0;
+    this.cartItems.forEach(({ price, quantity }) => {
+      totalPrice = totalPrice + price* quantity;
+    });
+    return Number(totalPrice.toFixed(2));
+  }
 }
