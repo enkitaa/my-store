@@ -13,4 +13,8 @@ export class CartService {
       this.cartItems.push({...product, quantity});
       alert('Product added to cart');
   }
+
+  getProduct(){
+    return this.cartItems;
+  }
 }
