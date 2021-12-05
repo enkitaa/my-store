@@ -6,7 +6,7 @@
         </app-cart-item>
     </div>
     <div class="cart-panel" *ngIf="cartItems.length > 0">
-        Checkout form!!
+        <app-checkout-form (submitCustomerDetails)='confirmOrder($event)'></app-checkout-form>
       </div>
     <div class="empty-cart-message" *ngIf="cartItems.length === 0">
         <p>Your Shopping cart is empty!</p>

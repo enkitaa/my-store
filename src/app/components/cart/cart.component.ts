@@ -22,4 +22,9 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartService.getProduct();
     this.totalPrice = this.cartService.getTotal();
   }
+
+  confirmOrder(e: any){
+    console.log(e);
+    //ToDo - Confirm page redirect
+  }
 }
