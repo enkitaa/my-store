@@ -1,8 +1,6 @@
 <div class="cart-container">
     <div class='cart-panel'>
-        <app-cart-item 
-            *ngFor="let cartItem of cartItems"
-            [cartItem]="cartItem">
+        <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem">
         </app-cart-item>
     </div>
     <div class="empty-cart-message" *ngIf="cartItems.length === 0">
