@@ -48,3 +48,6 @@ Add unit testing to the project
 https://angular.io/<br/>
 https://classroom.udacity.com/ <br/>
 https://github.com/udacity/nd-0067-c3-angular-fundamentals-project-starter <br/>
+https://codepen.io/sumeet1610/pen/abJeZXq <br/>
+https://shields.io/#styles <br/>
+https://stackoverflow.com/
