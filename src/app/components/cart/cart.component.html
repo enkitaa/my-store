@@ -1,8 +1,12 @@
 <div class="cart-container">
-    <div class='cart-panel'>
-        <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem">
+    <div class='cart-panel' *ngIf="cartItems.length > 0">
+        <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"
+        (removeFromCart)="removeFromCart($event)">
         </app-cart-item>
     </div>
+    <div class="cart-panel" *ngIf="cartItems.length > 0">
+        Checkout form!!
+      </div>
     <div class="empty-cart-message" *ngIf="cartItems.length === 0">
         <p>Your Shopping cart is empty!</p>
         <a routerLink="" class="back-link">&#8592; Back to Product List</a>

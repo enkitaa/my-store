@@ -6,5 +6,8 @@
         <div class='title'>{{cartItem.name}}</div>
         <div class='price'>$ {{cartItem.price}}</div>
         <div class='quantity'>Quantity: {{cartItem.quantity}}</div>
-    </div>
+        <form (ngSubmit)="removeProdFromCart()" #form="ngForm">
+            <button type="submit" class="remove-btn">Remove from Cart</button>
+        </form>
+    </div>  
 </div>

@@ -39,5 +39,7 @@ export class ProductItemDetailComponent implements OnInit {
     });
   }
 
-  addToCart() {}
+  addToCart() {
+    this.cartService.addProduct(this.product, this.quantity);
+  }
 }
