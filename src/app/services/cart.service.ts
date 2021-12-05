@@ -10,8 +10,16 @@ export class CartService {
   constructor() {}
 
   addProduct(product: Product, quantity: number) {
-    this.cartItems.push({ ...product, quantity });
-    alert('Product added to cart');
+    let presentItem = this.cartItems.find(({id}) => id === product.id)
+    if(!presentItem){
+      this.cartItems.push({ ...product, quantity });
+    }
+    else{
+      let presentItemIdx = this.cartItems.indexOf(presentItem);
+      let updateItem = { ...presentItem, quantity: Number(presentItem.quantity)+ Number(quantity)};
+      this.cartItems.splice(presentItemIdx, 1, updateItem);
+    }
+    alert('Added to cart !!');
   }
 
   getProduct() {
