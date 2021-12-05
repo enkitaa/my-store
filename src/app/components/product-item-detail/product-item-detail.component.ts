@@ -42,4 +42,8 @@ export class ProductItemDetailComponent implements OnInit {
   addToCart() {
     this.cartService.addProduct(this.product, this.quantity);
   }
+
+  getSelectedQty(quantity: number){
+    console.log(`Event fired on dropdown value change ${quantity}`);
+  }
 }

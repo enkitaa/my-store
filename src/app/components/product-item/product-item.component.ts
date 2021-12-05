@@ -19,4 +19,7 @@ export class ProductItemComponent implements OnInit {
   addToCart(): void {
     this.cartService.addProduct(this.product, this.quantity);
   }
+  getSelectedQty(qty: number){
+    console.log(`Event fired on model value change ${qty}`)
+  }
 }
