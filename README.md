@@ -1,5 +1,8 @@
 # MyStore
 
+## Hosting 
+MyStore(https://mystorefirebase.web.app/)
+
 MyStore is Angular application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process. 
 
 [<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />](https://typescriptlang.org)
